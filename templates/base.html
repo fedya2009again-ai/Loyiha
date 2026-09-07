@@ -21,12 +21,12 @@
 <body>
 
   <header class="site-header">
+      {% block header %}
+        {% include 'components/_nav.html' %}
 
-      {% include 'components/_nav.html' %}
-
-      {% block hero %}
-      {% endblock hero %}
-
+        {% block hero %}
+        {% endblock hero %}
+      {% endblock header %}
 
   </header>
     {% block main %}
@@ -35,6 +35,7 @@
 
   <footer class="site-footer">
     {% block footer %}
+    <div class="container text-center small">&copy; 2026 LIBERTY Bookstore.</div>
     {% endblock footer %}
   </footer>
 

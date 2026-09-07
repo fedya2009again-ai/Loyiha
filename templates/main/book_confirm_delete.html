@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ block.super }}: {{ title }}
+{% endblock title %}
+
+{% block main %}
+<form method="post">
+    {% csrf_token %}
+    {{ book.title }} kitobini o'chirmoqchimisz?
+    <button type="submit" class="btn btn-danger">Ha</button>
+
+</form>
+
+<a class="btn btn-success" href="{% url 'book_detail' book.id %}">Ortga</a>
+{% endblock main %}

@@ -25,6 +25,9 @@ class Book(models.Model):
     def __str__(self):
         return self.title
 
+    class Meta:
+        ordering = ('-created',)
+
 class Comment(models.Model):
     text = models.CharField(max_length=500)
     created = models.DateTimeField(auto_now_add=True)

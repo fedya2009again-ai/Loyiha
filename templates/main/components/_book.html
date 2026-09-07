@@ -10,7 +10,7 @@
     {% endif %}
   </div>
   <div class="book-card-body">
-    <a href="detail.html" class="book-title">{{ book.title }}</a>
+    <a href="{% url 'book_detail' book.id %}" class="book-title">{{ book.title }}</a>
     <p class="book-desc">{{ book.introduction|truncatewords:20 }}</p>
     <div class="book-price">{{ book.price }} UZS</div>
   </div>
