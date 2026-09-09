@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<form method="post">
+{% csrf_token %}
+<h2>Shu commentni o'chirmoqchimisiz? → {{ comment.text }}</h2>
+<button type="submit" class="btn btn-danger">Ha</button>
+</form>
+<a href="{% url 'book_detail' comment.book.id %}" class="btn btn-success">Ortga</a>
+{% endblock main %}

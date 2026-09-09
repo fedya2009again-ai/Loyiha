@@ -1,6 +1,6 @@
 from django import forms
 from django.core.exceptions import ValidationError
-from .models import Book
+from .models import Book, Comment
 
 
 class BookForm(forms.ModelForm):
@@ -47,3 +47,24 @@ class BookForm(forms.ModelForm):
             )
 
         return title
+
+
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ['text']
+        widgets = {
+            'text': forms.Textarea(attrs={
+                'class': "form-control",
+                'rows': "3",
+                "placeholder": "Kitob bo'yicha tahliliy fikringiz..."
+            })
+        }
+
+
+
+
+
+
+
+
