@@ -10,7 +10,7 @@
           </ul>
           <div class="d-flex align-items-center gap-3">
             <a href="{% url 'add_book' %}" class="nav-link"><i class="fa-solid fa-plus"></i> Yangi kitob</a>
-            <a href="{% if request.user.is_authenticated %} {% url 'profile' %}{% else %}{% url login %}{% endif %}" class="nav-link"><i class="fa-regular fa-user"></i> Kabinet</a>
+            <a href="{% if request.user.is_authenticated %}{% url 'profile' %}{% else %}{% url 'login' %}{% endif %}">
           </div>
         </div>
       </div>

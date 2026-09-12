@@ -40,7 +40,7 @@ def book_detail(request, book_id):
     }
     return render(request, 'main/book_detail.html', context)
 
-@login_required(login_url='all_books')
+@login_required(login_url='login')
 def create_book(request):
     if request.method == "POST":
         form = BookForm(data=request.POST, files=request.FILES)
